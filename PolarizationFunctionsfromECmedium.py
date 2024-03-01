@@ -108,5 +108,6 @@ def ColorTraceEllipseSpatial(Ex,Ey):
             axes[i, j].grid(False)
             #axes[i, j].set_xticks([])
             #axes[i, j].set_yticks([])
+    print("type(color),color.shape",type(color),color.shape)
     plt.subplots_adjust(wspace=0, hspace=0.2)
     plt.show()
