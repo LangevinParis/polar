@@ -112,7 +112,7 @@ def ColorTraceEllipseSpatial(Ex,Ey):
     plt.subplots_adjust(wspace=0, hspace=0.2)
     plt.show()
 
-def TestTimeColorTraceEllipseSpatial(Ex,Ey):
+def TestTime(Ex,Ey):
     
     import numpy
     # Generate angles for the ellipse trace
