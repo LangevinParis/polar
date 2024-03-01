@@ -6,7 +6,7 @@ from matplotlib.colors import hsv_to_rgb
 import matplotlib.pyplot as plt
 import numpy as np
 u = np.linspace(0, 2 * np.pi, 1000)
-print('Line9',u[0:3])
+#print('Line9',u[0:3])
 
 def Jones2EllipseParameters(Ex,Ey):
 # Calculate ellipse orientation angle
@@ -21,7 +21,7 @@ def Jones2EllipseParameters(Ex,Ey):
     return OrientationAngle, sin2Epsilon, S
 
 def TraceEllipseSpatial(Ex,Ey):
-    print('Line24')
+    #print('Line24')
     import numpy
     # Generate angles for the ellipse trace
     #print('Line27')
