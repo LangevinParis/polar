@@ -66,7 +66,7 @@ def TraceEllipseSpatial(Ex,Ey):
     plt.subplots_adjust(wspace=0, hspace=0.2)
     plt.show()
     
-    def ColorTraceEllipseSpatial(Ex,Ey):
+def ColorTraceEllipseSpatial(Ex,Ey):
     
     import numpy
     # Generate angles for the ellipse trace
