@@ -103,10 +103,10 @@ def ColorTraceEllipseSpatial(Ex,Ey):
 
             axes[i, j].set_xlim(-1, 1)
             axes[i, j].set_ylim(-1, 1)
-            axes[i, j].set_adjustable('box')
+            #axes[i, j].set_adjustable('box')
             axes[i, j].set_aspect('equal')
             axes[i, j].grid(False)
-            axes[i, j].set_xticks([])
-            axes[i, j].set_yticks([])
+            #axes[i, j].set_xticks([])
+            #axes[i, j].set_yticks([])
     plt.subplots_adjust(wspace=0, hspace=0.2)
     plt.show()
