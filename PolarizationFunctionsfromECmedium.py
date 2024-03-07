@@ -92,7 +92,7 @@ def ColorTraceEllipseSpatial(Ex,Ey):
 
             result = np.dstack((OrientationAngle,(1-np.abs(sin2Xhi)),span/SPAN))
             color = hsv_to_rgb(result)[0][0]
-            print("type(color)","color.shape",type(color))
+            #print("type(color)","color.shape",type(color))
             
             delta=np.angle(a*np.conj(b))
             # Parametric equations for the ellipse
