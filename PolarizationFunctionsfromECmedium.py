@@ -83,7 +83,37 @@ def Jones2EllipseParametersOutput2(Ex,Ey):
     S=np.sqrt(Ex2 + Ey2)
     #return OrientationAngle, sin2Epsilon, S
     return OrientationAngle, S
+def VectorColorSpatial(Ex,Ey):
     
+    #import numpy
+    # Generate angles for the ellipse trace
+    #u = numpy.linspace(0, 2 * numpy.pi, 80)
+
+    # compute MAX SPAN
+    SPAN = numpy.sqrt(np.max(np.abs(Ex)**2+np.abs(Ey)**2))
+
+    nx,ny = numpy.shape(Ex)
+
+    #fig, axes = plt.subplots(nrows=nx, ncols=ny, figsize=(ny, nx), sharex=True, sharey=True)
+
+    #if nx==1:
+    #    axes = np.array([axes])  # Ensures axes is a 2D array
+    #if ny==1:
+    #    axes = np.array([axes])  # Ensures axes is a 2D array
+    
+    color_rgb = numpy.zeros((nx,ny,3))
+    for i in range(nx):
+        for j in range(ny):
+            a, b = Ex[i, j], Ey[i, j]
+            #OrientationAngle, sin2Xhi, span=Jones2EllipseParameters(a,b)
+            OrientationAngle, span = Jones2EllipseParametersOutput2(a,b)
+            OrientationAngle = (OrientationAngle + np.pi) / (2 * np.pi) # Normalize the orientation angle between 0 and 1
+
+            result = np.dstack((OrientationAngle,(1-np.abs(sin2Xhi)),span/SPAN))
+            color = hsv_to_rgb(result)[0][0]
+            color_rgb[i, j, :] = color
+    return color_rgb
+
 def ColorTraceEllipseSpatial(Ex,Ey):
     
     import numpy
@@ -131,36 +161,6 @@ def ColorTraceEllipseSpatial(Ex,Ey):
     #print("type(color)","color.shape",type(color))
     ###plt.subplots_adjust(wspace=0, hspace=0.2)
     ###plt.show()
-def VectorColorSpatial(Ex,Ey):
-    
-    #import numpy
-    # Generate angles for the ellipse trace
-    #u = numpy.linspace(0, 2 * numpy.pi, 80)
-
-    # compute MAX SPAN
-    SPAN = numpy.sqrt(np.max(np.abs(Ex)**2+np.abs(Ey)**2))
-
-    nx,ny = numpy.shape(Ex)
-
-    #fig, axes = plt.subplots(nrows=nx, ncols=ny, figsize=(ny, nx), sharex=True, sharey=True)
-
-    #if nx==1:
-    #    axes = np.array([axes])  # Ensures axes is a 2D array
-    #if ny==1:
-    #    axes = np.array([axes])  # Ensures axes is a 2D array
-    
-    color_rgb = numpy.zeros((nx,ny,3))
-    for i in range(nx):
-        for j in range(ny):
-            a, b = Ex[i, j], Ey[i, j]
-            #OrientationAngle, sin2Xhi, span=Jones2EllipseParameters(a,b)
-            OrientationAngle, span = Jones2EllipseParametersOutput2(a,b)
-            OrientationAngle = (OrientationAngle + np.pi) / (2 * np.pi) # Normalize the orientation angle between 0 and 1
-
-            result = np.dstack((OrientationAngle,(1-np.abs(sin2Xhi)),span/SPAN))
-            color = hsv_to_rgb(result)[0][0]
-            color_rgb[i, j, :] = color
-    return color_rgb
 
 def TestTime(Ex,Ey):
     
