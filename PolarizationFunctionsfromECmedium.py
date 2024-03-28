@@ -133,21 +133,21 @@ def ColorTraceEllipseSpatial(Ex,Ey):
     ###plt.show()
 def VectorColorSpatial(Ex,Ey):
     
-    import numpy
+    #import numpy
     # Generate angles for the ellipse trace
-    u = numpy.linspace(0, 2 * numpy.pi, 80)
+    #u = numpy.linspace(0, 2 * numpy.pi, 80)
 
     # compute MAX SPAN
-    SPAN=numpy.sqrt(np.max(np.abs(Ex)**2+np.abs(Ey)**2))
+    SPAN = numpy.sqrt(np.max(np.abs(Ex)**2+np.abs(Ey)**2))
 
-    nx,ny=numpy.shape(Ex)
+    nx,ny = numpy.shape(Ex)
 
-    fig, axes = plt.subplots(nrows=nx, ncols=ny, figsize=(ny, nx), sharex=True, sharey=True)
+    #fig, axes = plt.subplots(nrows=nx, ncols=ny, figsize=(ny, nx), sharex=True, sharey=True)
 
-    if nx==1:
-        axes = np.array([axes])  # Ensures axes is a 2D array
-    if ny==1:
-        axes = np.array([axes])  # Ensures axes is a 2D array
+    #if nx==1:
+    #    axes = np.array([axes])  # Ensures axes is a 2D array
+    #if ny==1:
+    #    axes = np.array([axes])  # Ensures axes is a 2D array
     
     color_rgb = numpy.zeros((nx,ny,3))
     for i in range(nx):
