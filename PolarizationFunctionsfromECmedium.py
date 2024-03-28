@@ -68,6 +68,7 @@ def TraceEllipseSpatial(Ex,Ey):
             axes[i, j].set_yticks([])
     plt.subplots_adjust(wspace=0, hspace=0.2)
     plt.show()
+    
 def Jones2EllipseParametersOutput2(Ex,Ey):
     # Calculate ellipse orientation angle
     Ex2=np.abs(Ex)**2
