@@ -83,6 +83,8 @@ def Jones2EllipseParametersOutput2(Ex,Ey):
     S=np.sqrt(Ex2 + Ey2)
     #return OrientationAngle, sin2Epsilon, S
     return OrientationAngle, S
+
+
 def VectorColorSpatial(Ex,Ey):
     
     #import numpy
